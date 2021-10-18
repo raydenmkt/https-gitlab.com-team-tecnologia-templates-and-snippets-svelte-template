@@ -1,0 +1,12 @@
+/node_modules/
+/public/build/
+
+.DS_Store
+
+# Build
+
+public/
+
+# IDEs
+.vscode
+.idea
