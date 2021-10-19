@@ -9,7 +9,6 @@ import typescript from "@rollup/plugin-typescript";
 import autoprefixer from "autoprefixer";
 import minify from "postcss-minify";
 import styles from "rollup-plugin-styles";
-import includePaths from "rollup-plugin-includepaths";
 
 import copy from "rollup-plugin-copy";
 import del from "rollup-plugin-delete";
@@ -37,7 +36,10 @@ function serve() {
   };
 }
 
-export default {
+/**
+ * @type {import('rollup').RollupOptions}
+ */
+const config = {
   input: "src/main.ts",
   output: {
     sourcemap: true,
@@ -57,7 +59,6 @@ export default {
             "src/manifest.json",
             "src/index.html",
             "src/favicon.png",
-            "src/assets/",
           ],
           dest: "public/",
         },
@@ -85,6 +86,9 @@ export default {
       mode: "extract",
       plugins: [autoprefixer, minify],
       use: ["sass"],
+      url: {
+        publicPath: "./assets",
+      },
     }),
 
     // If you have external dependencies installed from
@@ -97,14 +101,10 @@ export default {
       dedupe: ["svelte"],
     }),
     commonjs(),
+
     typescript({
       sourceMap: !production,
       inlineSources: !production,
-    }),
-
-    includePaths({
-      paths: ["./"],
-      extensions: [".js", ".ts", ".svelte", ".scss", ".css", ".json"],
     }),
 
     // In dev mode, call `npm run start` once
@@ -123,3 +123,5 @@ export default {
     clearScreen: false,
   },
 };
+
+export default config;
