@@ -1,10 +1,30 @@
 <script lang="ts">
-	import Router from "svelte-spa-router";
-	import routes from "./routes";
+import Router, { replace } from "svelte-spa-router";
+import routes, { IRouteLoadingDetail } from "./routes";
+
+function routeLoading(event: CustomEvent) {
+  const detail = event.detail as IRouteLoadingDetail;
+
+  // If not hash based, redirect to hash based path
+  if (!window.location.hash.startsWith("#/")) {
+    // Save query string
+    const { search } = window.location;
+
+    // Remove any paths and querystrings
+    window.history.replaceState(null, "", `${window.location.origin}/`);
+
+    // Go to location with querystring
+    replace(detail.location + search)
+      .catch((e) => {
+        // eslint-disable-next-line no-console
+        console.error(e);
+      });
+  }
+}
 </script>
 
 <main>
-	<Router {routes} />
+	<Router {routes} on:routeLoading={routeLoading}/>
 </main>
 
 <style>

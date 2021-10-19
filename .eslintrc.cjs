@@ -90,5 +90,6 @@ module.exports = {
     "require-yield": ["error"],
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "never"],
+    "import/extensions": "off",
   },
 };
