@@ -7,15 +7,20 @@ It includes a hash based routing solution, sass and css preprocessors and lintin
 
 ### Creating the project
 
-Copy the template with `degit`:
+Copy the template with git clone:
 
-```
-npx degit victoragcosta/svelte-template project-name
+```sh
+# clone recent files
+git clone --depth 1 https://gitlab.com/team-tecnologia/templates-and-snippets/svelte-template project-name
+# enter the project
+cd project-name
+# remove git repository
+rm -rf .git
 ```
 
 Install the node packages:
 
-```
+```sh
 npm install
 ```
 
