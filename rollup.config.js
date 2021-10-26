@@ -9,6 +9,7 @@ import typescript from "@rollup/plugin-typescript";
 import autoprefixer from "autoprefixer";
 import minify from "postcss-minify";
 import styles from "rollup-plugin-styles";
+import url from "@rollup/plugin-url";
 
 import copy from "rollup-plugin-copy";
 import del from "rollup-plugin-delete";
@@ -64,6 +65,13 @@ const config = {
         },
       ],
       verbose: true,
+    }),
+
+    url({
+      limit: 0,
+      destDir: "public/build/assets",
+      publicPath: "build/assets/",
+      fileName: "[name]-[hash][extname]",
     }),
 
     svelte({

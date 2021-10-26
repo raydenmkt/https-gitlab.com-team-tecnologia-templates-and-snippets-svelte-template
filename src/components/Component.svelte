@@ -4,9 +4,10 @@
 <h1>Component</h1>
 
 <style lang="scss">
-  $fs: 10rem;
+  $fs: 5rem;
   h1 {
     font-size: $fs;
+    margin: 1rem;
   }
   ::selection {
     background-color: #ff3e00;
