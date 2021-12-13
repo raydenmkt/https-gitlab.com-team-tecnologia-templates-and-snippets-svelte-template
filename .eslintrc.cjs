@@ -59,12 +59,6 @@ module.exports = {
         "no-multiple-empty-lines": "off",
       },
     },
-    {
-      files: ["*.stories.ts"],
-      rules: {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
   ],
   settings: {
     "svelte3/typescript": () => require("typescript"),
@@ -73,6 +67,11 @@ module.exports = {
         return false;
       }
       return true;
+    },
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
     },
   },
   parserOptions: {
@@ -98,5 +97,6 @@ module.exports = {
     "array-bracket-spacing": ["error", "never"],
     "import/extensions": "off",
     "no-plusplus": "off",
+    "import/no-extraneous-dependencies": "off",
   },
 };
