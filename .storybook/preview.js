@@ -1,3 +1,6 @@
+// import global css to be applied to all stories
+import '../src/styles/global.scss'
+
 import customViewports from './viewports'
  
 export const parameters = {
