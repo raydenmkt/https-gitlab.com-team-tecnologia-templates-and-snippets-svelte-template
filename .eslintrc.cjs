@@ -59,6 +59,12 @@ module.exports = {
         "no-multiple-empty-lines": "off",
       },
     },
+    {
+      files: ["*.stories.ts"],
+      rules: {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
   ],
   settings: {
     "svelte3/typescript": () => require("typescript"),
@@ -91,5 +97,6 @@ module.exports = {
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "never"],
     "import/extensions": "off",
+    "no-plusplus": "off",
   },
 };
