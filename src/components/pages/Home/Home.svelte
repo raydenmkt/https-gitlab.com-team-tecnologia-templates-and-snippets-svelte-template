@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { location, querystring } from "svelte-spa-router";
-	import MyComponent from "../components/MyComponent/MyComponent.svelte";
+	import MyComponent from "../../MyComponent/MyComponent.svelte";
 
-	import Luna from "../assets/img/Luna.jpg";
+	import Luna from "../../../assets/img/Luna.jpg";
 </script>
 
 <img src="{Luna}" alt="Luna">

@@ -1,6 +1,6 @@
-import Home from "./routes/Home.svelte";
-import Lorem from "./routes/Lorem.svelte";
-import NotFound from "./routes/NotFound.svelte";
+import Home from "./components/pages/Home/Home.svelte";
+import Lorem from "./components/pages/Lorem/Lorem.svelte";
+import NotFound from "./components/pages/NotFound/NotFound.svelte";
 
 export default {
   "/": Home,
