@@ -98,5 +98,7 @@ module.exports = {
     "import/extensions": "off",
     "no-plusplus": "off",
     "import/no-extraneous-dependencies": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
   },
 };
