@@ -7,7 +7,7 @@ It includes a hash based routing solution, sass and css preprocessors and lintin
 
 ### Creating the project
 
-Copy the template with git clone:
+1. Copy the template with git clone:
 
 ```sh
 # clone recent files
@@ -18,7 +18,16 @@ cd project-name
 rm -rf .git
 ```
 
-Install the node packages:
+2. Install the [asdf](https://asdf-vm.com/).
+
+3. Install the [asdf node plugin](https://github.com/asdf-vm/asdf-nodejs).
+
+4. Install the node with asdf:
+```sh
+asdf install
+```
+
+5. Install the node packages:
 
 ```sh
 npm install
@@ -30,6 +39,10 @@ npm install
 npm run dev   # live reloading mode
 npm run build # generate production build
 npm run start # serve the production build
+npm run test  # run jest tests and snapshot tests
+npm run test:ui # run screenshot test with server to view diffs
+npm run test:ui-cli # run screenshot test without server
+npm run storybook # run the storybook server
 ```
 
 ## Configuring the linter for Svelte
@@ -40,11 +53,6 @@ You can add linter configurations on the file `.eslintrc.cjs` but be careful and
 add Typescript related rules only for typescript.
 
 ## TODO
-
-* [ ] Add testing framework(s)
-
-  * Jest
-  * Storybook
 
 * [ ] Improve linter configurations
 * [ ] Add linting for SCSS and CSS
