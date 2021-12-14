@@ -11,3 +11,4 @@ public/
 .vscode
 .idea
 /coverage/
+.creevey/report/

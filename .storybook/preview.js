@@ -13,5 +13,8 @@ export const parameters = {
   },
   viewport: {
     viewports: customViewports,
+  },
+  creevey: {
+    skip: { kinds: /^((?![Pp]ages).)*$/ }
   }
 }

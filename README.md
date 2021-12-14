@@ -41,8 +41,8 @@ npm run build # generate production build
 npm run start # serve the production build
 npm run test  # run jest tests and snapshot tests
 npm run test:ui # run screenshot test with server to view diffs
-npm run test:ui-cli # run screenshot test without server
-npm run storybook # run the storybook server
+npm run test:ui-cli # run screenshot test without server (docker must be running)
+npm run storybook # run the storybook server (docker must be running)
 ```
 
 ## Configuring the linter for Svelte
